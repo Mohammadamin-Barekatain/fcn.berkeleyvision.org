@@ -1,0 +1,32 @@
+===============
+Ensemble
+sky 93.4
+road 85.3
+building 84.8
+sun 83.3
+mountain 79.2
+sea 78.2
+tree 71.0
+car 70.3
+staircase 68.2
+river 62.6
+sand 56.8
+sidewalk 52.0
+field 48.4
+grass 39.2
+crosswalk 34.0
+fence 33.8
+window 31.1
+sign 30.7
+door 29.9
+boat 24.3
+rock 23.1
+person 21.7
+bridge 20.2
+plant 16.9
+awning 13.9
+streetlight 0.1
+balcony 0.0
+bird 0.0
+bus 0.0
+pole 0.0

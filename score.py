@@ -50,6 +50,8 @@ def do_seg_tests(net, iter, save_format, dataset, layer='score', gt='label'):
     # per-class IU
     iu = np.diag(hist) / (hist.sum(1) + hist.sum(0) - np.diag(hist))
     print '>>>', datetime.now(), 'Iteration', iter, 'mean IU', np.nanmean(iu)
+    #IU per class
+    print 'Iteration', iter, 'per-class IU', str(iu)
     freq = hist.sum(1) / hist.sum()
     print '>>>', datetime.now(), 'Iteration', iter, 'fwavacc', \
             (freq[freq > 0] * iu[freq > 0]).sum()

@@ -1,0 +1,9 @@
+*.caffemodel
+*.solverstate
+*.jpg
+*.mat
+*.DS_Store
+*.png
+*.pyc
+*.pkl
+._*

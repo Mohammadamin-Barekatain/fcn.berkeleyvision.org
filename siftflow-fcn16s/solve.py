@@ -11,7 +11,7 @@ try:
 except:
     pass
 
-weights = '../siftflow-fcn32s/siftflow-fcn32s.caffemodel'
+weights = '../siftflow-fcn16s/siftflow-fcn16s-heavy.caffemodel' # it was 32s and I changed that to 16s
 
 # init
 caffe.set_device(int(sys.argv[1]))
