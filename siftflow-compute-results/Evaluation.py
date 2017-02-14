@@ -12,13 +12,12 @@ from PIL import Image
 import six.moves.cPickle as pickle
 
 GPU = int(sys.argv[1]) # Set GPU Device 
-model = 'fcnResNet50' # Set Model Name, should be same as folder name
-weight_folder = 'log1-ImageNet' # Set The Snapshot Folder
+model = 'fcnResNet152-skip' # Set Model Name, should be same as folder name
+weight_folder = 'log1' # Set The Snapshot Folder
+begin = 1
 
-ITER_TAG = "Iteration"
 TST_TAG_LIST = ["overall accuracy", "mean accuracy", "mean IU", "fwavacc", "per-class IU", 'loss']
 model_path = '../siftflow-' + model+ '/'+ weight_folder + '/'
-Log = model_path + "training-info.log"
 
 def fast_hist(a, b, n):
     k = (a >= 0) & (a < n)
@@ -113,7 +112,7 @@ test = np.loadtxt('../data/sift-flow/test.txt', dtype=str)
 error_sem = []
 error_geo = []
 # scoring
-for i in xrange(1,101):
+for i in xrange(begin,500):
     iter = i*2500
     weights = model_path + weight_folder+'_iter_'+str(iter)+'.caffemodel'
     if not os.path.isfile(weights):

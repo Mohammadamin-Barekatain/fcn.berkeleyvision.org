@@ -1,5 +1,5 @@
 train_net: 'fcnResNet50-trainval.prototxt'
-test_net: 'fcnResNet50-trainval.prototxt'
+test_net: 'fcnResNet50-test.prototxt'
 test_iter: 200
 # make test net, but don't invoke it from the solver itself
 test_interval: 999999999

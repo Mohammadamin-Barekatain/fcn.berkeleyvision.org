@@ -10,7 +10,7 @@ try:
 except:
     pass
 
-weights = '_iter_2500.caffemodel'
+weights = 'log1_iter_100000.caffemodel'
 
 # init
 caffe.set_device(int(sys.argv[1]))

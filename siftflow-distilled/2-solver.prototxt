@@ -7,7 +7,7 @@ display: 20
 average_loss: 20
 lr_policy: "fixed"
 # lr for unnormalized softmax
-base_lr: 1e-10
+base_lr: 1e-14
 # high momentum
 momentum: 0.99
 # no gradient accumulation
@@ -16,4 +16,5 @@ max_iter: 300000
 weight_decay: 0.0005
 test_initialization: false
 snapshot: 2500
-snapshot_prefix: "log2"
+snapshot_prefix: "log3"
+

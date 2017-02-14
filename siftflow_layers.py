@@ -98,7 +98,7 @@ class SIFTFlowSegDataLayer(caffe.Layer):
         - transpose to channel x height x width order
         """
         im = Image.open('{}/Images/spatial_envelope_256x256_static_8outdoorcategories/{}.jpg'.format(self.siftflow_dir, idx))
-        in_ = np.array(im, dtype=np.float32)
+	in_ = np.array(im, dtype=np.float32)
         in_ = in_[:,:,::-1]
         in_ -= self.mean
         in_ = in_.transpose((2,0,1))

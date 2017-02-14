@@ -7,7 +7,7 @@ layer {
   top: "sem"
   top: "geo"
   python_param {
-    module: "siftflow_layers"
+    module: "siftflow_layers_generate"
     layer: "SIFTFlowSegDataLayer"
     param_str: "{\'siftflow_dir\': \'../data/sift-flow\', \'seed\': 1337, \'split\': \'trainval\'}"
   }
