@@ -56,3 +56,21 @@ def do_seg_tests(net, iter, save_format, dataset, layer='score', gt='label'):
     print '>>>', datetime.now(), 'Iteration', iter, 'fwavacc', \
             (freq[freq > 0] * iu[freq > 0]).sum()
     return hist
+
+def quick_tests(solver, save_format, dataset, layer='score', gt='label'):
+    print '>>>', datetime.now(), 'Begin seg tests'
+    solver.test_nets[0].share_with(solver.net)
+    net = solver.test_nets[0]
+    iter =  solver.iter
+    n_cl = net.blobs[layer].channels
+    if save_format:
+        save_format = save_format.format(iter)
+    hist, loss = compute_hist(net, save_format, dataset, layer, gt)
+    # overall accuracy
+    acc = np.diag(hist).sum() / hist.sum()
+    print '>>>', datetime.now(), 'Iteration', iter, 'overall accuracy', acc
+    # per-class IU
+    iu = np.diag(hist) / (hist.sum(1) + hist.sum(0) - np.diag(hist))
+    print '>>>', datetime.now(), 'Iteration', iter, 'mean IU', np.nanmean(iu)
+    return hist
+

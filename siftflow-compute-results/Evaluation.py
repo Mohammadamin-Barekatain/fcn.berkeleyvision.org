@@ -12,7 +12,7 @@ from PIL import Image
 import six.moves.cPickle as pickle
 
 GPU = int(sys.argv[1]) # Set GPU Device 
-model = 'fcnResNet152-skip' # Set Model Name, should be same as folder name
+model = 'fcnResNet50-skip-distilled' # Set Model Name, should be same as folder name
 weight_folder = 'log1' # Set The Snapshot Folder
 begin = 1
 
@@ -101,8 +101,11 @@ except:
 setup(model)
 
 # init
-caffe.set_device(GPU)
-caffe.set_mode_gpu()
+if GPU < 0:
+  caffe.set_mode_cpu()
+else:
+  caffe.set_device(GPU)
+  caffe.set_mode_gpu()
 
 solver = caffe.SGDSolver('solver.prototxt')
 # surgeries

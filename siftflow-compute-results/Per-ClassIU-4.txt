@@ -1,0 +1,32 @@
+===============
+fcn8s-distilled-2
+building 83.0
+sky 92.2
+road 83.1
+mountain 77.0
+sea 76.1
+tree 69.7
+river 68.0
+staircase 65.7
+car 65.3
+sun 62.8
+field 51.3
+sidewalk 51.2
+sand 49.4
+grass 38.7
+boat 34.0
+rock 32.8
+window 31.4
+fence 30.8
+plant 27.8
+door 25.9
+person 23.1
+bridge 20.5
+sign 13.8
+awning 12.8
+crosswalk 12.0
+streetlight 0.3
+balcony 0.0
+bird 0.0
+bus 0.0
+pole 0.0
