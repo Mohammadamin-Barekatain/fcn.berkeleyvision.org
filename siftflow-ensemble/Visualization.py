@@ -17,7 +17,7 @@ target = "test" #test: test set, trainval: training set
 ensemble = False
 #models = ['fcn8s-distilled','fcnResNet152-skip']
 #models =['fcnResNet152','fcn16s','fcn32s','fcn8s','fcnResNet101','fcnResNet50']
-models = ['fcnResNet50-distilled']
+models = ['fcnResNet152-skip-distilled','fcnResNet50-skip-distilled', 'fcnResNet50-skip']
 cmap = plt.get_cmap('hsv')
 
 n_models = len(models) * 1.0
